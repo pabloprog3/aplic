@@ -14,7 +14,13 @@ import { PaginaNoEncontradaComponent } from './pagina-no-encontrada/pagina-no-en
 
 //crear array de rutas
 //instalar plugin typescript hero
-const rutasDeNavegacion: Routes = [{path: 'login', component:LoginComponent}, {path: 'pagina-no-encontrada', component:PaginaNoEncontradaComponent} ]
+const rutasDeNavegacion: Routes = [
+  {path: 'login', component:LoginComponent}, 
+  {path:'', redirectTo:'/login', pathMatch:'full'},
+  {path: '**', component:PaginaNoEncontradaComponent}
+  
+];
+
 
 @NgModule({
   declarations: [
